@@ -1,28 +1,27 @@
-import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, Image, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
-import {useSelector, useDispatch} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
+import Style from '../styles/LoadingScreenStyle';
+
+import logo from '../assets/logo.png';
 
 const LoadingScreen = props => {
   const navigation = useNavigation();
+
+  useEffect(() => {
+    setTimeout(() => {
+      handleClick();
+    }, 2000);
+  });
 
   const handleClick = () => {
     navigation.navigate('Login');
   };
 
   return (
-    <View
-      style={{
-        backgroundColor: 'blue',
-        width: '100%',
-        height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <TouchableOpacity onPress={handleClick}>
-        <Text>{props.loadingIndicate}</Text>
-      </TouchableOpacity>
+    <View style={Style.mainContainer}>
+      <Image source={logo} style={Style.logo} />
     </View>
   );
 };

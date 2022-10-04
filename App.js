@@ -1,4 +1,5 @@
 import React from 'react';
+import {StatusBar} from 'react-native';
 import {reducer} from './src/reducers/main/index';
 import {Provider} from 'react-redux';
 import ReduxThunk from 'redux-thunk';
@@ -11,6 +12,10 @@ import LoginScreen from './src/component/LoginScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
+  StatusBar.setBackgroundColor('rgba(0,0,0,0)');
+  StatusBar.setBarStyle('light-content');
+  StatusBar.setTranslucent(true);
+
   const store = createStore(reducer, {}, applyMiddleware(ReduxThunk));
   return (
     <Provider store={store}>
