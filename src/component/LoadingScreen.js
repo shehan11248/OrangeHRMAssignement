@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
+import {View, Image, TouchableOpacity, AsyncStorage} from 'react-native';
 import {connect} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import Style from '../styles/LoadingScreenStyle';
@@ -10,13 +10,18 @@ const LoadingScreen = props => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    setTimeout(() => {
-      handleClick();
-    }, 2000);
+    naviagte();
   });
 
-  const handleClick = () => {
-    navigation.navigate('Login');
+  const naviagte = async () => {
+    let value = await AsyncStorage.getItem('response');
+    setTimeout(() => {
+      if (value === 'LOG') {
+        navigation.navigate('home');
+      } else {
+        navigation.navigate('Login');
+      }
+    }, 2000);
   };
 
   return (

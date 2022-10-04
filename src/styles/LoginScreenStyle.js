@@ -34,7 +34,7 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
   },
   textInputView: {
-    width: wp('65'),
+    width: wp('70'),
     height: hp('6'),
     backgroundColor: '#FFFFFF',
     borderRadius: 15,
@@ -44,7 +44,7 @@ module.exports = StyleSheet.create({
     justifyContent: 'center',
   },
   txtInput: {
-    width: wp('29'),
+    width: wp('60'),
     height: hp('6'),
     fontSize: 15,
   },
@@ -82,7 +82,7 @@ module.exports = StyleSheet.create({
   },
   btnTxt: {
     fontSize: 18,
-    color: '#fff',
+    color: '#000',
   },
   insTxt: {
     fontSize: 15,

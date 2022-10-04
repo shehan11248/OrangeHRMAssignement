@@ -8,6 +8,7 @@ import LoadingScreen from './src/component/LoadingScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from './src/component/LoginScreen';
+import HomeScreen from './src/component/HomeScreen';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,13 @@ const App = () => {
           <Stack.Screen
             name="Login"
             component={LoginScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="home"
+            component={HomeScreen}
             options={{
               headerShown: false,
             }}
