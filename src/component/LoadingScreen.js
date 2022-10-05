@@ -9,6 +9,7 @@ import {
 import {connect} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import Style from '../styles/LoadingScreenStyle';
+import {getUserData} from '../actions/Authentication';
 
 import logo from '../assets/logo.png';
 
@@ -50,8 +51,10 @@ const LoadingScreen = props => {
 
   const naviagte = async () => {
     let value = await AsyncStorage.getItem('response');
+    let userid = await AsyncStorage.getItem('userId');
     setTimeout(() => {
       if (value === 'LOG') {
+        props.getUserData(userid);
         navigation.navigate('home');
       } else {
         navigation.navigate('Login');
@@ -72,4 +75,6 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {})(LoadingScreen);
+export default connect(mapStateToProps, {
+  getUserData,
+})(LoadingScreen);
