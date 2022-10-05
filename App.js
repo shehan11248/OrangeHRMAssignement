@@ -9,6 +9,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from './src/component/LoginScreen';
 import HomeScreen from './src/component/HomeScreen';
+import SignupScreen from './src/component/SignupScreen';
+import FlashMessage from 'react-native-flash-message';
 
 const Stack = createStackNavigator();
 
@@ -36,6 +38,15 @@ const App = () => {
               headerShown: false,
             }}
           />
+
+          <Stack.Screen
+            name="Sign"
+            component={SignupScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+
           <Stack.Screen
             name="home"
             component={HomeScreen}
@@ -45,6 +56,13 @@ const App = () => {
           />
         </Stack.Navigator>
       </NavigationContainer>
+      <FlashMessage
+        duration={1000}
+        floating={true}
+        position="top"
+        icon="auto"
+        style={{marginTop: '10%'}}
+      />
     </Provider>
   );
 };

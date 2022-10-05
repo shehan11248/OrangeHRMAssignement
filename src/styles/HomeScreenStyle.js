@@ -21,6 +21,7 @@ module.exports = StyleSheet.create({
   logo: {
     width: 120,
     height: 120,
+    borderRadius: 60,
   },
   title: {
     fontSize: 25,
@@ -39,6 +40,7 @@ module.exports = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginTop: hp('2'),
+    marginBottom: hp('4'),
   },
   details: {
     fontSize: 16,
@@ -48,13 +50,13 @@ module.exports = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: wp('90'),
-    height: hp('52'),
+    // height: hp('52'),
     backgroundColor: '#fff',
     elevation: 8,
-    marginTop: hp('2'),
+    marginTop: hp('6'),
     borderRadius: 30,
-    paddingTop: hp('2'),
-    paddingBottom: hp('2'),
+    paddingTop: hp('6'),
+    paddingBottom: hp('5'),
   },
   cardView: {
     width: wp('80'),
@@ -62,7 +64,7 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: hp('2'),
+    marginBottom: hp('4'),
   },
   cardSubview: {
     width: wp('22'),

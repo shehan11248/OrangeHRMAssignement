@@ -56,9 +56,21 @@ module.exports = StyleSheet.create({
     width: 250,
     height: 80,
   },
+  user: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: hp('3'),
+  },
   instaLogo: {
     width: 50,
     height: 50,
+    marginTop: hp('1'),
+    marginLeft: wp('4'),
+  },
+  instaLogo1: {
+    width: 48,
+    height: 48,
     marginTop: hp('1'),
   },
   btn: {
@@ -80,6 +92,25 @@ module.exports = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  signView: {
+    width: wp('100'),
+    paddingTop: hp('2'),
+    paddingBottom: hp('2'),
+    // backgroundColor: '#ff9e00',
+    marginTop: hp('2'),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  insterBtnView: {
+    width: wp('100'),
+    // backgroundColor: '#ff9e00',
+    // marginTop: hp('2'),
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
   btnTxt: {
     fontSize: 18,
     color: '#000',
@@ -87,6 +118,15 @@ module.exports = StyleSheet.create({
   insTxt: {
     fontSize: 15,
     color: '#000',
+  },
+
+  singTxt: {
+    fontSize: 14,
+    color: '#000',
+  },
+  singTxt1: {
+    fontSize: 14,
+    color: '#4FC5BA',
   },
   footerTxt: {
     fontSize: 12,
@@ -100,5 +140,18 @@ module.exports = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  headerView1: {
+    // backgroundColor: 'red',
+    width: wp('100'),
+    height: hp('15'),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  mainContainer1: {
+    backgroundColor: '#fff',
+    width: wp('100'),
+    height: hp('100'),
+    paddingTop: hp('5'),
   },
 });
