@@ -25,6 +25,12 @@ import {
   googleLogin,
 } from '../actions/Authentication';
 import {showMessage} from 'react-native-flash-message';
+import {
+  Client,
+  GetPageInfoRequest,
+  GetPageInfoResponse,
+  GetPageMediaRequest,
+} from 'instagram-graph-api';
 
 const LoginScreen = props => {
   const [instagramLogin, setinstagramLogin] = useState({});
@@ -60,6 +66,7 @@ const LoginScreen = props => {
           email: userInfo.user.email,
           password: '1234',
           navigation: navigation,
+          type: 'google',
         };
         props.googleLogin(obj);
       }
@@ -83,10 +90,24 @@ const LoginScreen = props => {
 
     await axios
       .get(
-        `https://graph.instagram.com/${data.user_id}?fields=username,email&access_token=${data.access_token}`,
+        `https://graph.instagram.com/${data.user_id}?fields=id,username,name,email&access_token=${data.access_token}`,
       )
       .then(response => {
         console.log(response);
+
+        if (response.data !== undefined) {
+          let obj = {
+            id: response.data.id,
+            pic: 'default',
+            user: response.data.username,
+            name: response.data.username,
+            email: response.data.username + '@gmail.com',
+            password: '1234',
+            navigation: navigation,
+            type: 'insta',
+          };
+          props.googleLogin(obj);
+        }
       })
       .catch(function (error) {
         console.log(error.response);

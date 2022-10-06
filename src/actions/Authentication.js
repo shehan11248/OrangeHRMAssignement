@@ -70,6 +70,7 @@ export const registration = obj => async dispatch => {
       image: obj.pic,
       password: obj.password,
       createAt: new Date().toISOString(),
+      type: obj.type,
     })
     .then(() => {
       showMessage({
@@ -158,6 +159,7 @@ export const googleLogin = obj => async dispatch => {
             image: obj.pic,
             password: obj.password,
             createAt: new Date().toISOString(),
+            type: obj.type,
           })
           .then(() => {
             firestore()

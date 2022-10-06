@@ -46,6 +46,7 @@ const SignupScreen = props => {
                   email: props.email,
                   password: props.password,
                   navigation: navigation,
+                  type: 'normal',
                 };
                 props.registration(obj);
               } else {

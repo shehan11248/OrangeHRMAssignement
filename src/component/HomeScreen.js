@@ -42,20 +42,34 @@ const HomeScreen = props => {
 
   const removeData = async () => {
     try {
-      await GoogleSignin.revokeAccess();
-      await GoogleSignin.signOut();
-      await AsyncStorage.removeItem('response');
-      await AsyncStorage.clear();
-      navigation.navigate('Login');
+      if (props.userDAta.type === 'insta') {
+        CookieManager.clearAll(true).then(res => {
+          console.log(res);
+          removeAction();
+          // this.setState({token: null});
+        });
+      } else if (props.userDAta.type === 'google') {
+        await GoogleSignin.revokeAccess();
+        await GoogleSignin.signOut();
+        await AsyncStorage.removeItem('response');
+        await AsyncStorage.clear();
+        navigation.navigate('Login');
+      } else {
+        await AsyncStorage.removeItem('response');
+        await AsyncStorage.clear();
+        navigation.navigate('Login');
+      }
     } catch (error) {}
   };
 
+  const removeAction = async () => {
+    await AsyncStorage.removeItem('response');
+    await AsyncStorage.clear();
+    navigation.navigate('Login');
+  };
+
   const onClear = () => {
-    CookieManager.clearAll(true).then(res => {
-      console.log(res);
-      removeData();
-      // this.setState({token: null});
-    });
+    removeData();
   };
 
   return (
