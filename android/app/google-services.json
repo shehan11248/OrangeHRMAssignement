@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "766872925954",
+    "project_id": "orangehrm-50df7",
+    "storage_bucket": "orangehrm-50df7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766872925954:android:1ffa7c64110b4d4d53741b",
+        "android_client_info": {
+          "package_name": "com.orangehrm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766872925954-ruvic668jebjpbut02kmvdjsfuvm48sk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.orangehrm",
+            "certificate_hash": "35b0b6a67eff46c961fffed8c05e864c88b8b918"
+          }
+        },
+        {
+          "client_id": "766872925954-prnsdq60jnevjr7sg3jeboqsuvbjkvnl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCds-V6vZx3oZNMyEzvRCuthHLS0JisVHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766872925954-prnsdq60jnevjr7sg3jeboqsuvbjkvnl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
